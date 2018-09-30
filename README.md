@@ -7,5 +7,26 @@ Project Objective:
   This project will focus on using home value assessments rather than taxes. While taxes can be a good general indicator of what a property is worth (especially since taxes in cities are uniform), they are not useful without knowing other factors. Assessment is more-or-less a complete picture of how much a piece of property is actually worth. Additionally, suburbs may have different taxes than their neighboring cities, and are incomplete.
 
   The ultimate product of this project will be several visualizations within the US, along with a write-up detailing some of the more interesting findings we discover. 
+  
+Designated Data Science Library: Pandas
+Designated Visualization Library: Geoplotlib
+Designated Data Source: http://us-city.census.okfn.org/dataset/assessment
 
-Link to project: https://docs.google.com/document/d/1VsPtGSTwtEaFuGDfbzUlBq9AxC5sGInfuJRRDr2CtdY/edit?usp=sharing 
+Link to project: https://tinyurl.com/homevaluevalley
+
+Contributors:
+-Nathaniel Cohen
+-Zhuo Feng Lei (Jacky)
+-Alex Nobbe
+-Tina Guo
+-Yitao Meng
+-Vinayak Agarawal
+-Michael Rupp
+-Joshua Cheng
+-Tatiana Klein
+-Joshua K
+-Meghna Shrivastava
+-Smriiti Singhal
+-Clara Wei
+-Chris Zhu
+-Evan Rodriguez
