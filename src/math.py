@@ -6,4 +6,4 @@ import pandas as pd
 import plotly
 
 '''This is the master function that will be called at the end of the project.'''
-def create_line(file_name):
+def create_line(file_path):
