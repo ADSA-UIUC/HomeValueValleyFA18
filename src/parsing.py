@@ -15,10 +15,10 @@ def parse_file(file_path, desired_columns):
     print(sf_data)
 
 '''Think of this as your main() method when running the file'''
-def main():
+def parsing_main():
     file_path = "..\OriginalCSV\Assessor_Historical_Secured_Property_Tax_Rolls.csv"
     desired_columns = ["Parcel Number", "Analysis Neighborhood"]
     parse_file(file_path, desired_columns)
 
 '''The code that's actually run'''
-main()
+parsing_main()

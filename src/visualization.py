@@ -5,6 +5,12 @@ import pyglet
 import pandas as pd
 import plotly
 
-'''This is the master function that will be called at the end of the project.'''
+''' This is the master function that will be called at the end of the project. '''
 def visualize(file_path):
     return 0
+
+''' The main file for this file. '''
+def visualize_main():
+    return 0
+
+''' All code below this comment will be run when file is run '''

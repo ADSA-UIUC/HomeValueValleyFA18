@@ -67,3 +67,10 @@ def calc_y(y, m, x, x1):
 # Calculates x at y1 based on a line of slope m through (x,y)
 def calc_x(x, m, y, y1):
     return x - (1 / m) * (y - y1)
+
+'''The main method of the file. Use this for running'''
+def math_main():
+    return 0
+
+'''All code below this line will be run when you run the file'''
+math_main()
