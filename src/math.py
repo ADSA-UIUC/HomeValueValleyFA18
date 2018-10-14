@@ -68,6 +68,28 @@ def calc_y(y, m, x, x1):
 def calc_x(x, m, y, y1):
     return x - (1 / m) * (y - y1)
 
+#TODO: Implement locate_lowest_trough which takes a list of values
+#TODO: and returns the index of the lowest trough
+def locate_lowest_trough(vals):
+    return 0
+
+#TODO: Implement calc_city_coords which takes a list of coordinates (x,y)
+#TODO: and returns the highest and lowest x and y values
+def calc_city_coords(plot_centers):
+    return 0
+
+#TODO: Implement calc_plot_corners which takes a plot's center coordinate (x,y)
+#TODO: and the frontage of the plot, and returns a list of the 4 corners of the recctangular plot
+def calc_plot_corners(center_coord, frontage):
+    return 0
+
+#TODO: Implement calc_city_center which takes the data parsed in parsing and
+#TODO: determines the center of the city, be it geographic or financial
+#TODO: this is up for discussion among the math team
+#TODO: this should return a set of coordinates (x,y)
+def calc_city_center(city_data):
+    return 0
+
 '''The main method of the file. Use this for running'''
 def math_main():
     return 0
