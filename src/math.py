@@ -68,10 +68,24 @@ def calc_y(y, m, x, x1):
 def calc_x(x, m, y, y1):
     return x - (1 / m) * (y - y1)
 
-#TODO: Implement locate_lowest_trough which takes a list of values
-#TODO: and returns the index of the lowest trough
+# Returns list of indecies of all troughs in vals
 def locate_lowest_trough(vals):
-    return 0
+    if len(vals) == 1:
+        return [0]
+
+    troughs = []
+    if vals[0] < vals[1]:
+        troughs += 0
+
+    for i in range(len(vals)):
+        if i != 0 and i < len(vals) - 1:
+            if vals[i-1] < vals[i] < vals[i+1]:
+                troughs += i
+
+    if vals[len(vals) - 1] < vals[len(vals) - 2]:
+        troughs += len(vals) - 1
+
+    return troughs
 
 #TODO: Implement calc_city_coords which takes a list of coordinates (x,y)
 #TODO: and returns the highest and lowest x and y values
