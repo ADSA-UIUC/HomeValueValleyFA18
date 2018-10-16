@@ -16,7 +16,8 @@ def parse_file(file_path, desired_columns):
     use_regex = re.compile(".*Residential.*")
     use = sf_data["Use Definition"]
 
-    sf_data = sf_data[neighborhood.str.match(sunset_regex)]
+    # The na=false flag will skip over any entry that is none
+    sf_data = sf_data[neighborhood.str.match(sunset_regex, na=False)]
     sf_data = sf_data[use.str.match(use_regex, na=False)]
     print(sf_data)
 
