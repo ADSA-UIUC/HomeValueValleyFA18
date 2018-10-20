@@ -19,8 +19,11 @@ def parse_file(file_path, desired_columns):
     # The na=false flag will skip over any entry that is none
     sf_data = sf_data[neighborhood.str.match(sunset_regex, na=False)]
     sf_data = sf_data[use.str.match(use_regex, na=False)]
-    print(sf_data)
+    return sf_data
+    # print(sf_data)
 
+def calculate(original_value_filtered, intermediate_columns):
+    #calculate the area of the house
 
 '''Think of this as your main() method when running the file'''
 def parsing_main():
@@ -31,8 +34,11 @@ def parsing_main():
 
     desired_columns = ["Use Code", "Number of Units", "Assessed Improvement Value",
                        "Analysis Neighborhood", "the_geom", "Use Definition"]
-    parse_file(file_path, desired_columns)
-
+    original_value_filtered = parse_file(file_path, desired_columns)
+    intermediate_columns = ["Use Code", "Number of Units", "Assessed Improvement Value",
+                      "the_geom"]
+    output_columns = calculate(original_value_filtered, intermediate_columns)
+    print(output_columns)
 
 '''The code that's actually run'''
 parsing_main()
