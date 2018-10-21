@@ -9,7 +9,6 @@ import plotly
 def create_line(file_path):
     return 0
 
-
 # Returns True if a line of slop m through point (x,y) goes
 # through the plot defined by plot_points.
 # Horizontal Lines: m = 0
@@ -21,11 +20,9 @@ def line_goes_through_plot(plot_points, x, y, m):
     top_barrier = max(plot_points, key=lambda k: k[1])
 
     if m == None:
-        if bottom_barrier <= y <= top_barrier:
-            return True
+        return bottom_barrier <= y <= top_barrier
     elif m == 0:
-        if left_barrier <= x <= right_barrier:
-            return True
+        return left_barrier <= x <= right_barrier
     elif intersects_points(plot_points, x, y, m):
         return True
 
@@ -87,10 +84,20 @@ def locate_lowest_trough(vals):
 
     return troughs
 
-#TODO: Implement calc_city_coords which takes a list of coordinates (x,y)
-#TODO: and returns the highest and lowest x and y values
-def calc_city_coords(plot_centers):
-    return 0
+''' Accepts a list of coordinates and returns the boundary of the city '''
+def calc_city_coords(coords):
+    city_coords = []
+    left_barrier = min(coords, key=lambda k: k[0])
+    right_barrier = max(coords, key=lambda k: k[0])
+    bottom_barrier = min(coords, key=lambda k: k[1])
+    top_barrier = max(coords, key=lambda k: k[1])
+
+    city_coords += (left_barrier, top_barrier)
+    city_coords += (right_barrier, top_barrier)
+    city_coords += (right_barrier, bottom_barrier)
+    city_coords += (left_barrier, bottom_barrier)
+
+    return city_coords
 
 #TODO: Implement calc_plot_corners which takes a plot's center coordinate (x,y)
 #TODO: and the frontage of the plot, and returns a list of the 4 corners of the recctangular plot
