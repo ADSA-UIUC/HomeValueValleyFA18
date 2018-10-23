@@ -30,15 +30,15 @@ def parsing_main():
 
     # Make sure CSV file is in the correct file_path
     # NOTE IF MAC CHANGE '\' TO '/' (MAC = '/') (OTHER = '/')
-    file_path = "..\OriginalCSV\Assessor_Historical_Secured_Property_Tax_Rolls.csv"
+    file_path = "..\data\processeddata\San_Francisco_Assessments.csv"
 
     desired_columns = ["Use Code", "Number of Units", "Assessed Improvement Value",
                        "Analysis Neighborhood", "the_geom", "Use Definition"]
     original_value_filtered = parse_file(file_path, desired_columns)
-    intermediate_columns = ["Use Code", "Number of Units", "Assessed Improvement Value",
-                      "the_geom"]
+    # Why have a copy of the exact information when you can use the original as an arg?
+    # intermediate_columns = ["Use Code", "Number of Units", "Assessed Improvement Value", "the_geom"]
 
-    write_file("..\data\processeddata\San_Francisco_Assessments.csv", original_value_filtered)
+    write_file(file_path, original_value_filtered)
 
     #TODO: Implement the line below in math.py
     # output_columns = calculate(original_value_filtered, intermediate_columns)
