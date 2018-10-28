@@ -6,14 +6,14 @@ import pandas as pd
 import plotly
 import math
 
-'''This is the master function that will be called at the end of the project.'''
+''' This is the master function that will be called at the end of the project.'''
 def create_line(file_path):
     return 0
 
-# Returns True if a line of slop m through point (x,y) goes
-# through the plot defined by plot_points.
-# Horizontal Lines: m = 0
-# Vertical Lines: m = None
+''' Returns True if a line of slop m through point (x,y) goes
+    through the plot defined by plot_points.
+    Horizontal Lines: m = 0
+    Vertical Lines: m = None '''
 def line_goes_through_plot_rectangle(plot_points, x, y, m):
     left_barrier = min(plot_points, key=lambda k: k[0])
     right_barrier = max(plot_points, key=lambda k: k[0])
@@ -43,8 +43,8 @@ def line_goes_through_plot_rectangle(plot_points, x, y, m):
 
     return False
 
-# Due to lack of positioning available, plots may have to be circles
-# Code from https://www.geeksforgeeks.org/check-line-touches-intersects-circle/
+''' Due to lack of positioning available, plots may have to be circles
+    Code from https://www.geeksforgeeks.org/check-line-touches-intersects-circle/ '''
 def line_goes_through_plot_circle(line_x, line_y, line_m, circ_x, circ_y, radius):
     if line_m == None:
         return (circ_x - radius) <= line_x <= (circ_x + radius)
@@ -60,8 +60,8 @@ def line_goes_through_plot_circle(line_x, line_y, line_m, circ_x, circ_y, radius
 
     return dist <= radius
 
-# Returns True if a line of slope m through point (x,y) goes
-# through points.
+''' Returns True if a line of slope m through point (x,y) goes
+    through points. '''
 def intersects_points(points, x, y, m):
     for point in points:
         point_x = point[0]
@@ -73,16 +73,16 @@ def intersects_points(points, x, y, m):
     return False
 
 
-# Calculates y at x1 based on a line of slope m through (x,y)
+''' Calculates y at x1 based on a line of slope m through (x,y)'''
 def calc_y(y, m, x, x1):
     return y - m * (x - x1)
 
 
-# Calculates x at y1 based on a line of slope m through (x,y)
+''' Calculates x at y1 based on a line of slope m through (x,y)'''
 def calc_x(x, m, y, y1):
     return x - (1 / m) * (y - y1)
 
-# Returns list of indecies of all troughs in vals
+''' Returns list of indecies of all troughs in vals'''
 def locate_lowest_trough(vals):
     if len(vals) == 1:
         return [0]
@@ -127,10 +127,3 @@ def calc_plot_corners(center_coord, frontage):
 #TODO: this should return a set of coordinates (x,y)
 def calc_city_center(city_data):
     return 0
-
-'''The main method of the file. Use this for running'''
-def math_main():
-    return 0
-
-'''All code below this line will be run when you run the file'''
-math_main()
