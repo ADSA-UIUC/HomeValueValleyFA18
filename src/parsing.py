@@ -10,6 +10,8 @@ from src.math import *
 
 '''This is the master function that will be called at the end of the project.'''
 def parse_file(file_path, raw_columns, processed_columns):
+    # Create raw dataframe
+    # Filter out useless data
     raw_sf_data = pd.read_csv(filepath_or_buffer=file_path, usecols=raw_columns, low_memory=True, index_col=False)
     sunset_regex = re.compile(".*Sunset.*")
     neighborhood = raw_sf_data["Analysis Neighborhood"]
@@ -19,6 +21,12 @@ def parse_file(file_path, raw_columns, processed_columns):
     # The na=false flag will skip over any entry that is none
     raw_sf_data = raw_sf_data[neighborhood.str.match(sunset_regex, na=False)]
     raw_sf_data = raw_sf_data[use.str.match(use_regex, na=False)]
+
+    # Create processed_sf_data with columns from processed_columns
+    # Calculate processed_columns (except for lines) with MATH
+    # Fill processed_sf_data with data that can be calculated
+
+    # Calculate what points are on what line (and whether or not they ARE on a line)
 
     #TODO: Return a processed form of the data
     return raw_sf_data
