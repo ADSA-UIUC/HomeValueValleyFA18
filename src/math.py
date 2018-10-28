@@ -116,6 +116,9 @@ def calc_city_coords(coords):
 
     return city_coords
 
+def calc_radius(frontage, area):
+    return min(frontage / 2, math.sqrt(area / math.pi))
+
 #TODO: Implement calc_plot_corners which takes a plot's center coordinate (x,y)
 #TODO: and the frontage of the plot, and returns a list of the 4 corners of the recctangular plot
 def calc_plot_corners(center_coord, frontage):
