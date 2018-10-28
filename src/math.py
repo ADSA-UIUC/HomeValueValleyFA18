@@ -4,6 +4,7 @@ import matplotlib
 import pyglet
 import pandas as pd
 import plotly
+import math
 
 '''This is the master function that will be called at the end of the project.'''
 def create_line(file_path):
@@ -13,7 +14,7 @@ def create_line(file_path):
 # through the plot defined by plot_points.
 # Horizontal Lines: m = 0
 # Vertical Lines: m = None
-def line_goes_through_plot(plot_points, x, y, m):
+def line_goes_through_plot_rectangle(plot_points, x, y, m):
     left_barrier = min(plot_points, key=lambda k: k[0])
     right_barrier = max(plot_points, key=lambda k: k[0])
     bottom_barrier = min(plot_points, key=lambda k: k[1])
@@ -42,6 +43,16 @@ def line_goes_through_plot(plot_points, x, y, m):
 
     return False
 
+# Due to lack of positioning available, plots may have to be circles
+def line_goes_through_plot_circle(line_x, line_y, line_m, circ_x, circ_y, radius):
+    line_a = line_m
+    line_b = -1
+    line_c = -1 * (line_m * line_x) + line_y
+
+    dist = ((abs(line_a * circ_x + line_b * circ_y + line_c)) /
+            math.sqrt(line_a ** 2 + line_b ** 2))
+
+    return dist <= radius
 
 # Returns True if a line of slope m through point (x,y) goes
 # through points.
