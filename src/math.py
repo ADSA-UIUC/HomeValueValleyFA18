@@ -44,6 +44,7 @@ def line_goes_through_plot_rectangle(plot_points, x, y, m):
     return False
 
 # Due to lack of positioning available, plots may have to be circles
+# Code from https://www.geeksforgeeks.org/check-line-touches-intersects-circle/
 def line_goes_through_plot_circle(line_x, line_y, line_m, circ_x, circ_y, radius):
     line_a = line_m
     line_b = -1

@@ -32,17 +32,18 @@ def parsing_main():
 
     # Make sure CSV file is in the correct file_path
     # NOTE IF MAC CHANGE '\' TO '/' (MAC = '/') (OTHER = '/')
-    file_path = "..\data\processeddata\San_Francisco_Assessments.csv"
+    processed_file_path = "../data/processeddata/San_Francisco_Assessments.csv"
+    raw_file_path = "../data/rawdata/Assessor_Historical_Secured_Property_Tax_Rolls.csv"
 
     raw_data_columns = ["Use Code", "Number of Units", "Assessed Improvement Value",
-                       "Analysis Neighborhood", "the_geom", "Use Definition"]
+                       "Analysis Neighborhood", "the_geom", "Use Definition", "Lot Frontage"]
 
     processed_data_columns = ["Lot Number", "Center", "Radius", "Total Assessed Value",
                          "Assessed Value Per Unit", "On Line", "Line Number"]
 
-    parsed_data = parse_file(file_path, raw_data_columns, processed_data_columns)
+    parsed_data = parse_file(raw_file_path, raw_data_columns, processed_data_columns)
 
-    write_file(file_path, parsed_data)
+    write_file(processed_file_path, parsed_data)
     print(parsed_data)
 
 '''The code that's actually run'''
