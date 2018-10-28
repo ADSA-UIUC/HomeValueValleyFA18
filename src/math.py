@@ -116,6 +116,8 @@ def calc_city_coords(coords):
 
     return city_coords
 
+''' Returns radius of circle based on the frontage of the lot and area
+    Min() is used to reduce number of collisions between lots in circular form '''
 def calc_radius(frontage, area):
     return min(frontage / 2, math.sqrt(area / math.pi))
 
