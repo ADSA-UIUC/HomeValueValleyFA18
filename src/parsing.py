@@ -9,7 +9,7 @@ import re
 from src.math import *
 
 '''This is the master function that will be called at the end of the project.'''
-def parse_file(file_path, raw_columns, processed_columns):
+def parse_file(file_path, raw_columns, processed_data_init):
     # Create raw dataframe
     # Filter out useless data
     raw_sf_data = pd.read_csv(filepath_or_buffer=file_path, usecols=raw_columns, low_memory=True, index_col=False)
@@ -28,8 +28,10 @@ def parse_file(file_path, raw_columns, processed_columns):
 
     # Calculate what points are on what line (and whether or not they ARE on a line)
 
+    sf_data = pd.DataFrame(processed_data_init)
+
     #TODO: Return a processed form of the data
-    return raw_sf_data
+    return sf_data
 
 def write_file(file_path, processed_info):
     processed_info.to_csv(file_path, index=False)
@@ -46,10 +48,23 @@ def parsing_main():
     raw_data_columns = ["Use Code", "Number of Units", "Assessed Improvement Value",
                        "Analysis Neighborhood", "the_geom", "Use Definition", "Lot Frontage"]
 
-    processed_data_columns = ["Lot Number", "Center", "Radius", "Total Assessed Value",
-                         "Assessed Value Per Unit", "On Line", "Line Number"]
+    # This is a sample for data that we'll write to a file
+    # But we're going to overwrite all of them later on
+    # The data is all lists because Pandas says so
+    # This is the format we're going to use
+    # Center is now split into X and Y because Pandas hates tuples
+    processed_data_initial = {
+        "Lot Number": [1000],
+        "Center-X": [37.75],
+        "Center-Y": [-122.48],
+        "Radius": [25],
+        "Total Assessed Value": [750000],
+        "Assessed Value Per Unit": [600000],
+        "On Line": [True],
+        "Line Number": [1]
+    }
 
-    parsed_data = parse_file(raw_file_path, raw_data_columns, processed_data_columns)
+    parsed_data = parse_file(raw_file_path, raw_data_columns, processed_data_initial)
 
     write_file(processed_file_path, parsed_data)
     print(parsed_data)
