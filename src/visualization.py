@@ -6,7 +6,7 @@ import pandas as pd
 import plotly
 
 ''' This is the master function that will be called at the end of the project. '''
-def visualize(file_path):
+def visualize(city_name):
     return 0
 
 ''' The main file for this file. '''
