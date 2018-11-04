@@ -25,8 +25,8 @@ def parsing_main():
     # Center is now split into X and Y because Pandas hates tuples
     processed_data_initial = {
         "Lot Number": [1000],
-        "Center-X": [37.75],
-        "Center-Y": [-122.48],
+        "Center-Lat": [37.75],
+        "Center-Long": [-122.48],
         "Radius": [25],
         "Total Assessed Value": [750000],
         "Assessed Value Per Unit": [600000],

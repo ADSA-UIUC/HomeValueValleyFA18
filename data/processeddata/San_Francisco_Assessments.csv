@@ -1,2 +1,2 @@
-Lot Number,Center-X,Center-Y,Radius,Total Assessed Value,Assessed Value Per Unit,On Line,Line Number
+Lot Number,Center-Lat,Center-Long,Radius,Total Assessed Value,Assessed Value Per Unit,On Line,Line Number
 1000,37.75,-122.48,25,750000,600000,True,1
