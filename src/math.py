@@ -121,6 +121,25 @@ def calc_city_coords(coords):
 def calc_radius(frontage, area):
     return min(frontage / 2, math.sqrt(area / math.pi))
 
+''' Accepts coordinates of the city center and a point. Returns the distance between these points'''
+def calc_distance_from_center(city_x_coord, city_y_coord, point_x_coord, point_y_coord):
+    dif_x = abs(point_x_coord-city_x_coord)
+    dif_y = abs(point_y_coord-point_y_coord)
+    dif_x *= dif_x
+    dif_y *= dif_y
+    total = dif_x + dif_y
+    return total ** .5
+
+''' Accepts x coordinates of the city center and a point. Returns the difference in x. (pos/neg follows
+ normal cartesian plane)'''
+def get_relative_x(city_x_coords, point_x_coords):
+    return point_x_coords - city_x_coords
+
+''' Accepts y coordinates of the city center and a point. Returns the difference in y. (pos/neg follows
+ normal cartesian plane)'''
+def get_relative_y(city_y_coords, point_y_coords):
+    return point_y_coords - city_y_coords
+
 #TODO: Implement calc_plot_corners which takes a plot's center coordinate (x,y)
 #TODO: and the frontage of the plot, and returns a list of the 4 corners of the recctangular plot
 def calc_plot_corners(center_coord, frontage):
